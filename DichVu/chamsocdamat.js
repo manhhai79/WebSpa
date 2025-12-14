@@ -21,7 +21,7 @@ const navSlide = () => {
 window.addEventListener('scroll', reveal);
 
 function reveal() {
-    var reveals = document.querySelectorAll('.reveal, .fade-in'); // Thêm fade-in vào đây
+    var reveals = document.querySelectorAll('.reveal, .fade-in');
     
     for (var i = 0; i < reveals.length; i++) {
         var windowheight = window.innerHeight;

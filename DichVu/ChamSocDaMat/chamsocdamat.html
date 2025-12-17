@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chăm Sóc Da Mặt - Aura Aesthetics</title>
     
-    <link rel="stylesheet" href="../MainMenu/mainmenu.css">
+    <link rel="stylesheet" href="../../MainMenu/mainmenu.css">
     <link rel="stylesheet" href="chamsocdamat.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,25 +17,25 @@
 
     <header>
         <div class="logo">
-            <a href="../MainMenu/mainmenu.html"><i class="fa-solid fa-leaf"></i> Aura<span>Aesthetics</span></a>
+            <a href="../../MainMenu/mainmenu.html"><i class="fa-solid fa-leaf"></i> Aura<span>Aesthetics</span></a>
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="../MainMenu/mainmenu.html">Trang chủ</a></li>
-                <li><a href="../MainMenu/mainmenu.html#about">Giới thiệu</a></li>
+                <li><a href="../../MainMenu/mainmenu.html">Trang chủ</a></li>
+                <li><a href="../../MainMenu/mainmenu.html#about">Giới thiệu</a></li>
                 <li class="dropdown">
                     <a href="#" class="active">Dịch vụ <i class="fa-solid fa-angle-down"></i></a>
                     <div class="dropdown-content">
                         <a href="chamsocdamat.html" class="active-item">Chăm sóc da mặt</a>
                         <a href="#">Điều trị Laser</a>
-                        <a href="#">Massage thư giãn</a>
+                        <a href="../Massage/massage.html">Massage thư giãn</a>
                         <a href="#">Triệt lông vĩnh viễn</a>
                         <a href="#">Phun xăm thẩm mỹ</a>
                         <a href="#">Giảm béo SlimBody</a>
                     </div>
                 </li>
-                <li><a href="../KhachHangvaKhongGian/KhachHang.html">Khách Hàng</a></li>
-                <li><a href="../MainMenu/mainmenu.html#contact" class="btn-contact">Đặt lịch ngay</a></li>
+                <li><a href="../../KhachHangvaKhongGian/KhachHang.html">Khách Hàng</a></li>
+                <li><a href="../../MainMenu/mainmenu.html#contact" class="btn-contact">Đặt lịch ngay</a></li>
             </ul>
             <div class="burger">
                 <div class="line1"></div>
@@ -50,18 +50,28 @@
         
         <div class="hero-overlay-box fade-in">
             <div class="vertical-line">
-                
+                <span>TÁI TẠO LÀN DA.</span>
             </div>
             <div class="hero-text-content">
-                <h1>Chăm sóc da mặt</h1>
+                <h1>Facials</h1>
                 <p>
-                    Dù bạn đang tìm cách làm dịu làn da kích ứng, phục hồi sự nhạy cảm hay tái tạo da hoàn toàn, 
-                    liệu trình chăm sóc da tùy chỉnh của Aura sẽ mang lại kế hoạch và sản phẩm phù hợp nhất cho làn da không tì vết.
+                    Khi làn da cần được vỗ về, làm dịu hoặc tái sinh hoàn toàn, liệu trình chăm sóc da mặt thiết kế riêng sẽ giúp bạn tìm thấy sự cân bằng lý tưởng, nơi làn da trở nên mịn màng, tươi mới và tràn đầy sức sống.
                 </p>
             </div>
         </div>
     </section>
 
+
+    <section class="intro-slogan reveal">
+        <div class="container">
+            <span class="sub-title">Facial Treatments</span>
+            <h2>Khởi nguồn làn da khỏe đẹp</h2>
+            <p>Từ dưỡng ẩm sâu đến tẩy da chết êm dịu, mỗi liệu trình đều dành riêng cho sự rạng rỡ của bạn.</p>
+        </div>
+    </section>
+
+    <section class="facial-detail section-padding">
+  
     <section class="facial-detail section-padding">
         <div class="container">
             
@@ -160,7 +170,7 @@
                         Làm dịu và vỗ về làn da nhạy cảm với liệu trình nhẹ nhàng. Giúp giảm mẩn đỏ và kích ứng, khôi phục sự bình yên và thoải mái tuyệt đối cho làn da của bạn.
                     </p>
                     <div class="action-btns">
-                        <a href="../MainMenu/mainmenu.html#contact" class="btn-fill">Đặt Lịch Ngay</a>
+                        <a href="../../MainMenu/mainmenu.html#contact" class="btn-fill">Đặt Lịch Ngay</a>
                     </div>
                 </div>
             </div>
@@ -169,7 +179,7 @@
     </section>
 
     <div style="text-align: center; margin: 50px 0;">
-        <a href="../MainMenu/mainmenu.html" class="btn-main">Quay Về Trang Chủ</a>
+        <a href="../../MainMenu/mainmenu.html" class="btn-main">Quay Về Trang Chủ</a>
     </div>
 
     <footer id="contact">
@@ -197,7 +207,52 @@
             <p>&copy; 2024 Aura Aesthetics. All rights reserved.</p>
         </div>
     </footer>
+    <div id="bookingModal" class="modal">
+        <div class="modal-content fade-in">
+            <span class="close-btn">&times;</span>
+            
+            <div class="modal-header">
+                <h2>Đặt Lịch Hẹn</h2>
+                <p>Để lại thông tin, Aura sẽ liên hệ xác nhận ngay!</p>
+            </div>
 
+            <form id="bookingForm">
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label for="fullname">Họ và Tên <span class="required">*</span></label>
+                        <input type="text" id="fullname" placeholder="VD: Nguyễn Văn A" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại <span class="required">*</span></label>
+                        <input type="tel" id="phone" placeholder="VD: 0909..." required>
+                    </div>
+                </div>
+
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label for="service">Dịch vụ quan tâm</label>
+                        <input type="text" id="service" placeholder="VD: Classic Facial">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Ngày dự kiến</label>
+                        <input type="date" id="date">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Địa chỉ (Tùy chọn)</label>
+                    <input type="text" id="address" placeholder="Địa chỉ của bạn">
+                </div>
+
+                <div class="form-group">
+                    <label for="note">Ghi chú thêm</label>
+                    <textarea id="note" rows="3" placeholder="VD: Da mình đang bị kích ứng..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-fill btn-submit">Gửi Thông Tin</button>
+            </form>
+        </div>
+    </div>
     <script src="chamsocdamat.js"></script>
 </body>
 </html>

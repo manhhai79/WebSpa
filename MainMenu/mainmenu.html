@@ -4,54 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aura Aesthetics - Thẩm Mỹ Viện 5 Sao</title>
-    
     <link rel="stylesheet" href="mainmenu.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="mainmenu.js" defer></script>
 </head>
 <body>
 
     <header>
         <div class="logo">
-            <i class="fa-solid fa-leaf"></i> Aura<span>Aesthetics</span>
+            <a href="mainmenu.html"><i class="fa-solid fa-leaf"></i> Aura<span>Aesthetics</span></a>
         </div>
-        
         <nav>
             <ul class="nav-links">
                 <li><a href="#home">Trang chủ</a></li>
                 <li><a href="#about">Giới thiệu</a></li>
-                
                 <li class="dropdown">
-                    <a href="javascript:void(0)">Dịch vụ <i class="fa-solid fa-angle-down"></i></a>
+                    <a href="javascript:void(0);">Dịch vụ <i class="fa-solid fa-angle-down"></i></a>
                     <div class="dropdown-content">
-                        <a href="../DichVu/ChamSocDaMat/chamsocdamat.html">Chăm sóc da mặt</a>
-                        <a href="#">Điều trị Laser</a>
-                        <a href="../DichVu/Massage/massage.html">Massage thư giãn</a>
-                        <a href="#">Triệt lông vĩnh viễn</a>
-                        <a href="#">Phun xăm thẩm mỹ</a>
-                        <a href="#">Giảm béo SlimBody</a>
+                            <a href="/DichVu/ChamSocDaMat/chamsocdamat.html">Chăm sóc da mặt</a>
+                            <a href="#">Điều trị Laser</a>
+                            <a href="/DichVu/Massage/massage.html">Massage thư giãn</a>
+                            <a href="/DichVu/TrietLong/trietlong.html">Triệt lông vĩnh viễn</a>
+                            <a href="#">Phun xăm thẩm mỹ</a>
+                            <a href="#">Giảm béo SlimBody</a>
                     </div>
                 </li>
-
-                <li><a href="../KhachHangvaKhongGian/KhachHang.html">Khách Hàng</a></li>
-                <li><a href="#contact" class="btn-contact">Đặt lịch ngay</a></li>
+                <li><a href="/KhachHangvaKhongGian/KhachHang.html">Khách Hàng</a></li>
+                
+                <li><a href="booking.html" class="btn-contact">Đặt lịch ngay</a></li>
             </ul>
-            
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
+            <div class="burger"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div>
         </nav>
     </header>
 
     <section id="home" class="hero">
         <div class="hero-content fade-in">
-            <h1>Đánh thức vẻ đẹp tiềm ẩn</h1>
-            <p>Trải nghiệm không gian thư giãn đẳng cấp 5 sao & công nghệ làm đẹp hàng đầu thế giới.</p>
-            <a href="#services" class="btn-main">Khám Phá Dịch Vụ</a>
+            <div class="hero-badge"><i class="fa-solid fa-star"></i> Tinh Hoa Thư Giãn 5 Sao</div>
+            <h1>Liệu Pháp Signature:<br>Đánh Thức Mọi Giác Quan</h1>
+            <p>Hành trình tái tạo năng lượng hoàn hảo với sự kết hợp độc đáo giữa kỹ thuật trị liệu cổ truyền và công nghệ hiện đại, chỉ có tại Aura.</p>
+            
+            <div class="hero-buttons">
+                <a href="javascript:void(0);" class="btn-main open-modal-btn">Tư Vấn Ngay</a>
+            </div>
         </div>
     </section>
 
@@ -82,17 +79,17 @@
             <div class="service-grid">
                 <div class="service-card reveal">
                     <div class="icon"><i class="fa-solid fa-spa"></i></div>
-                    <h3>Chăm Sóc Da Mặt</h3>
+                    <h3>Chăm Sóc Da Luxury</h3>
                     <p>Cấp ẩm đa tầng, thải độc tố và phục hồi da hư tổn với tinh chất vàng 24K.</p>
                 </div>
                 <div class="service-card reveal">
                     <div class="icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-                    <h3>Điều Trị Laser</h3>
+                    <h3>Laser Công Nghệ Cao</h3>
                     <p>Điều trị nám, tàn nhang và xóa xăm an toàn, không đau rát, không để lại sẹo.</p>
                 </div>
                 <div class="service-card reveal">
                     <div class="icon"><i class="fa-solid fa-gem"></i></div>
-                    <h3>Massage Thư Giãn</h3>
+                    <h3>Massage Trị Liệu</h3>
                     <p>Kết hợp đá nóng và tinh dầu thảo dược giúp lưu thông khí huyết, giảm căng thẳng.</p>
                 </div>
                 <div class="service-card reveal">
@@ -126,7 +123,7 @@
                 <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=2070" alt="Spa 3"></div>
             </div>
             <div style="text-align: center; margin-top: 30px;">
-                <a href="../KhachHangvaKhongGian/KhachHang.html" class="btn-main">Xem Thêm Ảnh & Review</a>
+                <a href="/KhachHangvaKhongGian/KhachHang.html" class="btn-main">Xem Thêm Ảnh & Review</a>
             </div>
         </div>
     </section>
@@ -157,6 +154,36 @@
         </div>
     </footer>
 
-    <script src="mainmenu.js"></script>
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-header">
+                <h2>Đăng Ký Tư Vấn</h2>
+                <p>Để lại thông tin, chuyên viên sẽ liên hệ với bạn trong 5 phút.</p>
+            </div>
+            <form class="modal-form">
+                <div class="form-group">
+                    <label>Họ và tên</label>
+                    <input type="text" placeholder="Nhập tên của bạn" required>
+                </div>
+                <div class="form-group">
+                    <label>Số điện thoại</label>
+                    <input type="tel" placeholder="Nhập số điện thoại" required>
+                </div>
+                <div class="form-group">
+                    <label>Dịch vụ quan tâm</label>
+                    <select>
+                        <option>Chăm sóc da mặt</option>
+                        <option>Điều trị Laser</option>
+                        <option>Massage thư giãn</option>
+                        <option>Triệt lông vĩnh viễn</option>
+                        <option>Giảm béo SlimBody</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit-modal">Gửi Yêu Cầu</button>
+            </form>
+        </div>
+    </div>
+
 </body>
 </html>

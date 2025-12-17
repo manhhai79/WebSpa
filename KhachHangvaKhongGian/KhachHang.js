@@ -30,3 +30,28 @@ function reveal() {
     }
 }
 navSlide();
+
+
+const reviewForm = document.getElementById('reviewForm');
+if(reviewForm) {
+    reviewForm.addEventListener('submit', function(e) {
+        e.preventDefault(); // Ngăn load lại trang
+        
+        const btn = document.querySelector('.btn-submit');
+        const originalText = btn.innerText;
+
+        // Hiệu ứng đang gửi
+        btn.innerText = "Đang gửi...";
+        btn.style.opacity = "0.7";
+
+        setTimeout(() => {
+            // Hiệu ứng gửi thành công
+            alert("Cảm ơn bạn đã gửi đánh giá! Aura Aesthetics rất trân trọng ý kiến của bạn.");
+            
+            // Reset form
+            reviewForm.reset();
+            btn.innerText = originalText;
+            btn.style.opacity = "1";
+        }, 1500);
+    });
+}

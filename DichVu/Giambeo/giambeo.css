@@ -10,7 +10,7 @@
 /* === HERO SECTION: Căn giữa, ảnh nền tối === */
 .slim-hero {
     height: 70vh;
-    background: linear-gradient(rgba(15, 43, 91, 0.7), rgba(15, 43, 91, 0.5)), url('https://images.unsplash.com/photo-1518310383802-640c2de311b2?q=80&w=2070');
+    background: linear-gradient(rgba(15, 43, 91, 0.7), rgba(15, 43, 91, 0.5)), url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2070&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -273,4 +273,86 @@
 .package-card:hover .btn-book {
     background-color: var(--primary-color);
     box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+}
+/* --- TOAST NOTIFICATION (Thông báo đặt lịch) --- */
+#toast {
+    visibility: hidden; /* Mặc định ẩn */
+    min-width: 320px;
+    background-color: #fff;
+    color: #333;
+    text-align: left;
+    border-radius: 8px;
+    padding: 16px 20px;
+    position: fixed;
+    z-index: 3000; /* Nổi lên trên cùng */
+    left: 30px;
+    bottom: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    border-left: 6px solid #4CAF50; /* Viền xanh lá */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transform: translateX(-150%); /* Đẩy sang trái để ẩn */
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Hiệu ứng trượt nảy */
+}
+
+/* Class này sẽ được JS thêm vào để hiện thông báo */
+#toast.show {
+    visibility: visible;
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.toast-icon {
+    font-size: 28px;
+    color: #4CAF50;
+}
+
+.toast-body .toast-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.toast-body .toast-msg {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+/* =========================================
+   FIX LỖI ICON MẠNG XÃ HỘI Ở FOOTER
+
+/* 1. Container chứa các icon - Giúp xếp ngang và có khoảng cách */
+.footer-col .social-links {
+    display: flex;           /* Xếp các icon thành hàng ngang */
+    align-items: center;     /* Căn giữa theo chiều dọc */
+    gap: 15px;               /* Khoảng cách đều nhau giữa các icon */
+    margin-top: 20px;        /* Cách tiêu đề "Theo Dõi" ra một chút */
+}
+
+/* 2. Style cho từng khung tròn chứa icon */
+.footer-col .social-links a {
+    display: flex;           /* Sử dụng flex để căn giữa icon bên trong */
+    justify-content: center; /* Căn giữa ngang */
+    align-items: center;     /* Căn giữa dọc */
+    
+    width: 45px;             /* Chiều rộng khung tròn (Bạn có thể tăng giảm) */
+    height: 45px;            /* Chiều cao phải BẰNG chiều rộng để thành hình tròn */
+    border-radius: 50%;      /* Bo tròn hoàn toàn thành hình tròn */
+    
+    background-color: var(--primary-color, #0f2b5b); /* Màu nền xanh đậm (theo theme của bạn) */
+    color: #ffffff;          /* Màu icon trắng */
+    font-size: 20px;         /* Kích thước của icon bên trong */
+    
+    text-decoration: none;   /* Bỏ gạch chân */
+    transition: all 0.3s ease; /* Hiệu ứng mượt mà */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Bóng đổ nhẹ cho nổi bật */
+}
+
+/* 3. Hiệu ứng khi di chuột vào (Hover) - Đổi màu sang vàng */
+.footer-col .social-links a:hover {
+    background-color: var(--secondary-color, #d4af37); /* Đổi sang màu vàng kim khi di chuột */
+    transform: translateY(-3px); /* Nổi lên một chút tạo cảm giác động */
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3); /* Bóng đổ màu vàng */
 }

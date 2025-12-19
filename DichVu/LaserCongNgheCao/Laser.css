@@ -261,3 +261,49 @@
 .btn-submit-modal { width: 100%; padding: 12px; background: var(--primary-color); border: none; color: white; margin-top: 15px; cursor: pointer; }
 .form-group { margin-bottom: 15px; }
 .form-group input { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ddd; }
+/* --- TOAST NOTIFICATION (Thông báo đặt lịch) --- */
+#toast {
+    visibility: hidden; /* Mặc định ẩn */
+    min-width: 320px;
+    background-color: #fff;
+    color: #333;
+    text-align: left;
+    border-radius: 8px;
+    padding: 16px 20px;
+    position: fixed;
+    z-index: 3000; /* Nổi lên trên cùng */
+    left: 30px;
+    bottom: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    border-left: 6px solid #4CAF50; /* Viền xanh lá */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transform: translateX(-150%); /* Đẩy sang trái để ẩn */
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Hiệu ứng trượt nảy */
+}
+
+/* Class này sẽ được JS thêm vào để hiện thông báo */
+#toast.show {
+    visibility: visible;
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.toast-icon {
+    font-size: 28px;
+    color: #4CAF50;
+}
+
+.toast-body .toast-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.toast-body .toast-msg {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}

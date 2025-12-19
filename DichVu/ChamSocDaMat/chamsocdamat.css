@@ -364,3 +364,111 @@
     .form-group-row { flex-direction: column; gap: 0; }
     .modal-content { margin: 15% auto; padding: 25px; }
 }
+
+/*7. PHẦN QUY TRÌNH (PROCESS) - STYLE GIỐNG HOMEPAGE*/
+.process-section {
+    background-color: #fff; /* Đổi nền section sang trắng để các ô màu kem nổi bật lên */
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+/* Style cho từng ô quy trình (Giống .service-card bên MainMenu) */
+.process-step {
+    background: var(--gold-light-bg); /* Nền màu kem nhạt */
+    padding: 40px 30px;
+    border-radius: 15px;
+    border: 1px solid transparent; /* Viền trong suốt để dành cho hiệu ứng hover */
+    transition: all 0.3s ease; /* Hiệu ứng chuyển động mượt */
+    position: relative;
+    overflow: hidden; /* Đảm bảo nội dung gọn gàng */
+}
+
+/* HIỆU ỨNG HOVER: Nổi lên + Viền vàng + Nền trắng */
+.process-step:hover {
+    transform: translateY(-10px); /* Nổi lên trên */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08); /* Đổ bóng */
+    border-color: var(--primary-color); /* Hiện viền vàng */
+    background: #ffffff; /* Đổi nền sang trắng */
+}
+
+/* Style cho Icon */
+.step-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    transition: 0.5s; /* Thời gian xoay icon */
+    display: inline-block; /* Bắt buộc có để xoay được */
+}
+
+/* HIỆU ỨNG XOAY ICON (Lật hình) */
+.process-step:hover .step-icon {
+    transform: rotateY(180deg); /* Xoay 180 độ trục dọc */
+}
+
+/* Style tiêu đề và nội dung */
+.process-step h3 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #0f2b5b;
+}
+
+.process-step p {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* =========================================
+   8. PHẦN FAQ (CÂU HỎI THƯỜNG GẶP)
+   ========================================= */
+.faq-section {
+    background-color: #fff;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+}
+
+.faq-item {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.faq-item h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.faq-item h3 i {
+    color: var(--primary-color);
+}
+
+.faq-item p {
+    font-size: 1rem;
+    color: #666;
+    padding-left: 30px; /* Thụt lề cho thẳng hàng với chữ trên */
+    line-height: 1.6;
+}
+
+/* Responsive cho phần mới */
+@media(max-width: 768px) {
+    .faq-grid {
+        grid-template-columns: 1fr; /* 1 cột trên mobile */
+    }
+    .faq-item {
+        padding: 10px 0;
+    }
+}

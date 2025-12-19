@@ -76,6 +76,7 @@
                 </div>
                 <div class="service-info">
                     <h2>Phun môi Plascell</h2>
+                    <p class="service-price">Giá: <span>6.500.000 VNĐ</span></p>
                     <div class="tags">
                         <span><i class="fa-solid fa-check"></i> Hạn chế tổn thương</span>
                         <span><i class="fa-solid fa-check"></i> Giúp giảm sưng</span>
@@ -95,7 +96,7 @@
                         tối ưu nhất.
                     </p>
                     <div class="action-btns">
-                        <a href="../MainMenu/mainmenu.html#contact" class="btn-fill">Đặt Lịch Ngay</a>
+                        <a href="#" class="btn-fill btn-book">Đặt Lịch Ngay</a>
                     </div>
                 </div>
             </div>
@@ -106,6 +107,9 @@
                 </div>
                 <div class="service-info">
                     <h2>Phun mày Plascell</h2>
+
+                    <p class="service-price">Giá: <span>5.800.000 VNĐ</span></p>
+
                     <div class="tags">
                         <span><i class="fa-solid fa-check"></i> Cặp lông mày đều màu</span>
                         <span><i class="fa-solid fa-check"></i> Hạn chế tổn thương</span>
@@ -118,7 +122,7 @@
                         trạng tổn thương, rút ngắn thời gian phục hồi, duy trì hiệu quả lâu dài.
                     </p>
                     <div class="action-btns">
-                        <a href="../MainMenu/mainmenu.html#contact" class="btn-fill">Đặt Lịch Ngay</a>
+                        <a href="#" class="btn-fill btn-book">Đặt Lịch Ngay</a>
                     </div>
                 </div>
             </div>
@@ -129,6 +133,9 @@
                 </div>
                 <div class="service-info">
                     <h2>Điêu khắc Hair stroke</h2>
+
+                    <p class="service-price">Giá: <span>7.500.000 VNĐ</span></p>
+
                     <div class="tags">
                         <span><i class="fa-solid fa-check"></i>Sợi lông mày có độ tự nhiên cao</span>
                         <span><i class="fa-solid fa-check"></i> Lên màu chuẩn xác</span>
@@ -142,7 +149,7 @@
                         chuẩn xác, độ bền màu lâu.
                     </p>
                     <div class="action-btns">
-                        <a href="../MainMenu/mainmenu.html#contact" class="btn-fill">Đặt Lịch Ngay</a>
+                        <a href="#" class="btn-fill btn-book">Đặt Lịch Ngay</a>
                     </div>
                 </div>
             </div>
@@ -184,6 +191,48 @@
             <p>&copy; 2024 Aura Aesthetics. All rights reserved.</p>
         </div>
     </footer>
+
+    <div id="bookingModal" class="modal">
+        <div class="modal-content fade-in">
+            <span class="close-btn">&times;</span>
+            <div class="modal-header">
+                <h2>Đặt Lịch Hẹn</h2>
+                <p>Để lại thông tin, Aura sẽ liên hệ xác nhận ngay!</p>
+            </div>
+            <form id="bookingForm">
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label for="fullname">Họ và Tên <span class="required">*</span></label>
+                        <input type="text" id="fullname" placeholder="VD: Nguyễn Văn A" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại <span class="required">*</span></label>
+                        <input type="tel" id="phone" placeholder="VD: 0909..." required>
+                    </div>
+                </div>
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label for="service">Dịch vụ quan tâm</label>
+                        <input type="text" id="service" placeholder="VD: Classic Facial">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Ngày dự kiến</label>
+                        <input type="date" id="date">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="address">Địa chỉ (Tùy chọn)</label>
+                    <input type="text" id="address" placeholder="Địa chỉ của bạn">
+                </div>
+                <div class="form-group">
+                    <label for="note">Ghi chú thêm</label>
+                    <textarea id="note" rows="3" placeholder="VD: Da mình đang bị kích ứng..."></textarea>
+                </div>
+                <button type="submit" class="btn-fill btn-submit">Gửi Thông Tin</button>
+            </form>
+        </div>
+    </div>
+
 
     <script src="phunxam.js"></script>
 </body>

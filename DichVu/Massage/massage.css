@@ -249,6 +249,15 @@
     font-size: 1.1rem;
 }
 
+.service-price {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
 /* --- NÚT BẤM (BUTTON) --- */
 .action-btns {
     display: flex;

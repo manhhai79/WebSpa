@@ -12,10 +12,16 @@
     position: relative;
     width: 100%;
     height: 85vh;
-    overflow: hidden;
     margin-top: 60px;
     display: flex;
     align-items: center;
+
+    /* CẤU HÌNH ẢNH NỀN CỐ ĐỊNH */
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=2070');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Ảnh đứng yên khi cuộn */
 }
 
 .hero-bg-img {
@@ -88,7 +94,7 @@
 /* === SLOGAN SECTION === */
 .intro-slogan {
     text-align: center;
-    padding: 80px 20px 0px; /* Padding dưới bằng 0 để sát phần dịch vụ */
+    padding: 200px 20px 100px; /* Padding dưới bằng 0 để sát phần dịch vụ */
     background: #fff;
 }
 
@@ -249,6 +255,15 @@
     font-size: 1.1rem;
 }
 
+.service-price {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
 /* --- NÚT BẤM (BUTTON) --- */
 .action-btns {
     display: flex;
@@ -397,3 +412,105 @@
     .form-group-row { flex-direction: column; gap: 0; }
     .modal-content { margin: 15% auto; padding: 25px; }
 }
+
+.process-section {
+    background-color: #fff; /* Nền trắng để nổi bật các ô */
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+/* Style cho ô quy trình */
+.process-step {
+    background: var(--gold-light-bg); /* Nền vàng nhạt */
+    padding: 40px 30px;
+    border-radius: 15px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* HIỆU ỨNG HOVER: Nổi lên + Đổi nền + Viền vàng */
+.process-step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    border-color: var(--primary-color);
+    background: #ffffff;
+}
+
+/* Icon */
+.step-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    transition: 0.5s; /* Thời gian xoay */
+    display: inline-block;
+}
+
+/* HIỆU ỨNG XOAY 180 ĐỘ KHI DI CHUỘT */
+.process-step:hover .step-icon {
+    transform: rotateY(180deg);
+}
+
+.process-step h3 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #0f2b5b;
+}
+
+.process-step p {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* =========================================
+   8. PHẦN CÂU HỎI THƯỜNG GẶP (FAQ)
+   ========================================= */
+.faq-section {
+    background-color: #fff;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+}
+
+.faq-item {
+    padding: 20px;
+    border-bottom: 1px solid #eee; /* Đường gạch chân nhẹ */
+}
+
+.faq-item h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.faq-item h3 i {
+    color: var(--primary-color);
+}
+
+.faq-item p {
+    font-size: 1rem;
+    color: #666;
+    padding-left: 30px;
+    line-height: 1.6;
+}
+
+/* Responsive cho phần mới */
+@media(max-width: 768px) {
+    .faq-grid { grid-template-columns: 1fr; }
+    .process-step { margin-bottom: 20px; }
+}
+

@@ -1,4 +1,3 @@
-// DỮ LIỆU SẢN PHẨM MẪU
 const products = [
     { id: 1, name: "Serum Phục Hồi Obagi B5", price: 850000, category: "special", brand: "Obagi", image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1000", sold: "2.5k", desc: "Tinh chất cấp ẩm, phục hồi da tổn thương.", use: "Sử dụng 3-5 giọt thoa đều mặt sau bước Toner." },
     { id: 2, name: "Kem Chống Nắng La Roche-Posay", price: 550000, category: "protection", brand: "La Roche-Posay", image: "https://tse2.mm.bing.net/th/id/OIP.Fy5HkvKhwfKTED9wC9eDvAHaHa?w=182&h=182&c=7&r=0&o=7&cb=ucfimg2&dpr=1.3&pid=1.7&rm=3&ucfimg=1", sold: "10k+", desc: "Bảo vệ da phổ rộng, kiểm soát dầu nhờn.", use: "Thoa kem trước khi ra nắng 20 phút." },
@@ -12,16 +11,13 @@ let cart = [];
 let currentDetail = null;
 const formatVND = (p) => new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(p);
 
-// --- RENDER & FILTER ---
 function render(data = products) {
     const grid = document.getElementById('productGrid');
     if(!grid) return;
     grid.innerHTML = data.map(p => `
         <div class="product-card fade-in" onclick="openDetail(${p.id})">
             <div class="badge-sale">15%<br>GIẢM</div>
-            <div class="card-img-wrap">
-                <img src="${p.image}">
-            </div>
+            <div class="card-img-wrap"><img src="${p.image}"></div>
             <div class="card-body">
                 <div class="card-name">${p.name}</div>
                 <div class="card-meta">
@@ -52,7 +48,6 @@ function handleSort(type) {
     render(sorted);
 }
 
-// --- DETAIL MODAL ---
 function openDetail(id) {
     currentDetail = products.find(p => p.id === id);
     document.getElementById('detail-img').src = currentDetail.image;
@@ -78,7 +73,6 @@ function openTab(tab, el) {
     document.getElementById('tab-' + tab).classList.add('active');
 }
 
-// --- CART LOGIC ---
 function quickAdd(id) {
     const p = products.find(i => i.id === id);
     addToCart(p, 1);
@@ -101,11 +95,9 @@ function addToCart(p, qty) {
 function updateUI() {
     const totalQty = cart.reduce((s, i) => s + i.qty, 0);
     const totalPrice = cart.reduce((s, i) => s + (i.price * i.qty), 0);
-    
     document.getElementById('cart-badge').innerText = totalQty;
     document.getElementById('cart-total-qty').innerText = `(${totalQty})`;
     document.getElementById('cart-total-price').innerText = formatVND(totalPrice);
-
     const list = document.getElementById('cartList');
     list.innerHTML = cart.length === 0 ? '<p style="text-align:center; padding:30px; color:#999;">Giỏ hàng trống</p>' 
     : cart.map((item, idx) => `
@@ -126,11 +118,9 @@ function toggleCart() {
     document.getElementById('overlay').classList.toggle('active');
 }
 
-// --- CHECKOUT ---
 function openCheckout() {
     if(cart.length === 0) return showToast("Giỏ hàng đang trống!", "error");
     toggleCart(); 
-    
     const list = document.getElementById('checkout-list');
     list.innerHTML = cart.map(item => `
         <div class="co-item">
@@ -138,10 +128,8 @@ function openCheckout() {
             <span>${formatVND(item.price * item.qty)}</span>
         </div>
     `).join('');
-    
     const total = cart.reduce((s, i) => s + (i.price * i.qty), 0);
     document.getElementById('final-total').innerText = formatVND(total);
-    
     document.getElementById('checkoutModal').style.display = 'block';
 }
 
@@ -154,15 +142,11 @@ document.getElementById('checkoutForm').onsubmit = (e) => {
     }, 500);
 };
 
-// --- MOBILE MENU LOGIC (Updated) ---
 function toggleMobileMenu() {
     const nav = document.querySelector('.nav-links');
-    const burger = document.querySelector('.burger');
     nav.classList.toggle('active');
-    burger.classList.toggle('toggle'); // Hiệu ứng burger (nếu có CSS)
 }
 
-// --- UTILS ---
 function showToast(msg, type) {
     const box = document.getElementById('toast-container');
     const t = document.createElement('div');
@@ -175,5 +159,4 @@ function showToast(msg, type) {
 function closeModal(id) { document.getElementById(id).style.display = 'none'; }
 window.onclick = (e) => { if(e.target.className === 'modal') e.target.style.display = 'none'; }
 
-// Init 
 render();

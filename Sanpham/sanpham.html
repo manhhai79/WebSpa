@@ -35,8 +35,10 @@
                 <li><a href="sanpham.html" class="active-link">Cửa Hàng</a></li>
 
                 <li class="cart-nav-item" onclick="toggleCart()">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <span id="cart-badge">0</span>
+                    <div class="cart-icon-wrap">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span id="cart-badge">0</span>
+                    </div>
                 </li>
 
                 <li><a href="../DatLich/datlich.html" class="btn-contact">Đặt lịch ngay</a></li>
@@ -101,30 +103,34 @@
         </main>
     </div>
 
-    <footer class="aura-footer">
-        <div class="container footer-row">
-            <div class="footer-col brand-col">
-                <a href="#" class="footer-logo"><i class="fa-solid fa-leaf"></i> Aura<span>Aesthetics</span></a>
-                <p>Hệ thống thẩm mỹ viện 5 sao chuẩn y khoa.</p>
-            </div>
-            <div class="footer-col">
-                <h3>Về Aura</h3>
-                <a href="#">Giới thiệu</a>
-                <a href="#">Đội ngũ bác sĩ</a>
-            </div>
-            <div class="footer-col">
-                <h3>Hỗ Trợ</h3>
-                <a href="#">Chính sách đổi trả</a>
-                <a href="#">Hướng dẫn mua hàng</a>
-            </div>
-            <div class="footer-col contact-col">
-                <h3>Liên Hệ</h3>
-                <p><i class="fa-solid fa-phone"></i> 0909 123 456</p>
-                <p><i class="fa-solid fa-location-dot"></i> Hà Nội, Việt Nam</p>
+<footer id="contact">
+    <div class="footer-content">
+        <div class="footer-col">
+            <h3>Aura Aesthetics</h3>
+            <p>Nơi nâng tầm vẻ đẹp Việt. Chúng tôi cam kết mang lại sự hài lòng tuyệt đối cho quý khách hàng.</p>
+        </div>
+
+        <div class="footer-col">
+            <h3>Liên Hệ</h3>
+            <p><i class="fa-solid fa-location-dot"></i> 123 Đường Hoa Hồng, Hà Nội</p>
+            <p><i class="fa-solid fa-phone"></i> 0909 123 456</p>
+            <p><i class="fa-solid fa-envelope"></i> tuvan@aura.vn</p>
+        </div>
+
+        <div class="footer-col">
+            <h3>Theo Dõi</h3>
+            <div class="socials">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
             </div>
         </div>
-        <div class="copyright">© 2024 Aura Aesthetics. All rights reserved.</div>
-    </footer>
+    </div>
+
+    <div class="copyright">
+        <p>&copy; 2024 Aura Aesthetics. All rights reserved.</p>
+    </div>
+</footer>
 
     <div id="productModal" class="modal">
         <div class="modal-content detail-box">
@@ -197,7 +203,6 @@
                         <input type="tel" placeholder="Số điện thoại" required>
                     </div>
                     <input type="text" class="full-width" placeholder="Địa chỉ chi tiết (Số nhà, đường, phường...)" required>
-                    <input type="email" class="full-width" placeholder="Email (Không bắt buộc)">
                     
                     <div class="payment-methods">
                         <h4>Phương thức thanh toán:</h4>

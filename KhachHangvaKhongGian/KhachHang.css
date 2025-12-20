@@ -843,3 +843,81 @@ footer {
     border-color: #f06666;
     font-weight: bold;
 }
+/* =================================================================
+   === PHẦN RESPONSIVE 
+   ================================================================= */
+
+/* 1. Tablet & Laptop nhỏ (Dưới 1024px) */
+@media (max-width: 1024px) {
+    .section-padding { padding: 60px 5%; }
+    .hero-content h1 { font-size: 3rem; }
+    
+    /* Chuyển lưới ảnh và review thành 2 cột */
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .review-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* 2. Mobile (Dưới 768px) - QUAN TRỌNG */
+@media (max-width: 768px) {
+    
+    /* --- MENU MOBILE --- */
+    .burger { display: block; z-index: 1001; }
+    
+    .nav-links {
+        position: fixed; right: 0; top: 80px; height: 90vh; width: 70%;
+        background-color: #fff; flex-direction: column; justify-content: flex-start;
+        padding-top: 30px; transform: translateX(100%); transition: transform 0.5s ease-in;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1); overflow-y: auto; display: block;
+    }
+
+    .nav-active { transform: translateX(0%); }
+
+    /* Chỉnh lại thẻ LI và Link trên mobile */
+    .nav-links li { 
+        opacity: 1; width: 100%; margin: 0; border-bottom: 1px solid #eee; 
+        display: block; height: auto; padding: 0;
+    }
+    .nav-links li a { display: block; padding: 15px 20px; font-size: 1rem; color: #333; }
+    .btn-contact { width: 90%; margin: 20px auto; display: block; text-align: center; }
+
+    /* Dropdown đẩy xuống (Static) */
+    .dropdown-content {
+        position: relative; top: 0; left: 0; width: 100%;
+        box-shadow: none; border-top: none; border-left: 3px solid var(--primary-color);
+        background-color: #f9f9f9; display: none;
+    }
+    .nav-links li:hover .dropdown-content { display: block; animation: none; }
+
+    /* --- NỘI DUNG TRANG --- */
+    .hero-client { height: 60vh; }
+    .hero-content h1 { font-size: 2.2rem; }
+
+    /* Form review */
+    .review-form-wrapper { padding: 40px 20px; }
+    .review-form .input-group { grid-template-columns: 1fr; gap: 0; }
+    .input-box { margin-bottom: 20px; }
+
+    /* Grid 1 cột */
+    .gallery-grid { grid-template-columns: 1fr; }
+    .review-grid { grid-template-columns: 1fr; }
+    .review-card { width: 100%; }
+
+    /* Footer: Xếp dọc & Căn giữa */
+    .footer-content { flex-direction: column; text-align: center; gap: 30px; padding: 0 20px; }
+    .footer-col { width: 100%; }
+}
+
+/* 3. Mobile Nhỏ (Dưới 480px) */
+@media (max-width: 480px) {
+    .logo { font-size: 1.4rem; }
+    .hero-content h1 { font-size: 1.8rem; }
+    .section-title h2 { font-size: 2rem; }
+    
+    /* Ẩn bớt toast review để đỡ vướng */
+    #toast { width: 90%; right: 5%; left: 5%; bottom: 10px; min-width: auto; }
+}
+
+/* Hiệu ứng nút Burger xoay */
+.toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
+.toggle .line2 { opacity: 0; }
+.toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); }

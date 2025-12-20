@@ -755,3 +755,81 @@ footer {
         transform: translateX(0);
     }
 }
+
+/* =================================================================
+   === PHẦN RESPONSIVE 
+   ================================================================= */
+
+/* 1. Tablet & Laptop nhỏ (Dưới 1024px) */
+@media (max-width: 1024px) {
+    .section-padding { padding: 60px 5%; }
+    .hero-content h1 { font-size: 3rem; }
+    .story-row { gap: 30px; }
+    .stat-item h3 { font-size: 2.8rem; }
+}
+
+/* 2. Mobile (Dưới 768px) - QUAN TRỌNG */
+@media (max-width: 768px) {
+    
+    /* --- MENU MOBILE (Giống Mainmenu) --- */
+    .burger { display: block; z-index: 1001; }
+    
+    .nav-links {
+        position: fixed; right: 0; top: 80px; height: 90vh; width: 70%;
+        background: #fff; flex-direction: column; justify-content: flex-start;
+        padding-top: 30px; transform: translateX(100%); transition: transform 0.5s ease-in;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1); overflow-y: auto; display: block;
+    }
+
+    .nav-active { transform: translateX(0%); }
+
+    /* Chỉnh lại thẻ LI và Link trên mobile */
+    .nav-links li { 
+        opacity: 1; width: 100%; margin: 0; border-bottom: 1px solid #eee; 
+        display: block; height: auto; padding: 0;
+    }
+    .nav-links li a { display: block; padding: 15px 20px; font-size: 1rem; color: #333; }
+    .btn-contact { width: 90%; margin: 20px auto; display: block; text-align: center; }
+
+    /* Dropdown đẩy xuống (Static) */
+    .dropdown-content {
+        position: relative; top: 0; left: 0; width: 100%;
+        box-shadow: none; border-top: none; border-left: 3px solid var(--primary-color);
+        background-color: #f9f9f9; display: none;
+    }
+    .nav-links li:hover .dropdown-content { display: block; animation: none; }
+
+    /* --- NỘI DUNG TRANG --- */
+    .hero-about { height: 60vh; }
+    .hero-content h1 { font-size: 2.2rem; }
+
+    /* Story: Xếp dọc */
+    .story-row { flex-direction: column; text-align: center; }
+    .story-img img { box-shadow: 10px 10px 0 var(--primary-color); }
+    .exp-badge { position: relative; left: 0; bottom: 0; margin: 20px auto 0; width: fit-content; }
+    .values-list li { justify-content: center; }
+
+    /* Grid 1 cột */
+    .stats-grid { grid-template-columns: 1fr; gap: 40px; }
+    .team-grid { grid-template-columns: 1fr; }
+
+    /* Footer: Xếp dọc & Căn giữa */
+    .footer-content { flex-direction: column; text-align: center; gap: 30px; }
+    .footer-col { width: 100%; }
+}
+
+/* 3. Mobile Nhỏ (Dưới 480px) */
+@media (max-width: 480px) {
+    .logo { font-size: 1.4rem; }
+    .hero-content h1 { font-size: 1.8rem; }
+    .section-padding { padding: 50px 20px; }
+    .stat-item h3 { font-size: 2.5rem; }
+    
+    /* Ẩn bớt toast review để đỡ vướng */
+    #review-toast { display: none; }
+}
+
+/* Burger Animation */
+.toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
+.toggle .line2 { opacity: 0; }
+.toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); }

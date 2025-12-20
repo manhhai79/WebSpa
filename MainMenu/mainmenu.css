@@ -928,22 +928,25 @@ footer {
 .text-box strong { font-size: 1.1rem; color: #333; }
 .popup-footer { text-align: center; font-size: 0.85rem; color: #666; margin-top: 15px; }
 .popup-footer a { color: #D4AF37; font-weight: bold; }
-/* ==================================================
-   === 7. RESPONSIVE (MOBILE & TABLET) ===
-   ================================================== */
 
-/* 1. Tablet (Dưới 1024px) */
+/* =================================================================
+   === PHẦN RESPONSIVE (DÁN VÀO CUỐI FILE MAINMENU.CSS) ===
+   === GIÚP WEB HIỂN THỊ ĐẸP TRÊN ĐIỆN THOẠI & IPAD ===
+   ================================================================= */
+
+/* 1. Tablet & Laptop nhỏ (Dưới 1024px) */
 @media (max-width: 1024px) {
     .container {
-        max-width: 95%;
+        max-width: 95%; /* Mở rộng khung ra sát lề hơn */
     }
 
     .hero-content h1 {
-        font-size: 3rem;
+        font-size: 3rem; /* Giảm cỡ chữ banner */
     }
 
-    /* Chuyển lưới dịch vụ thành 2 cột */
-    .service-grid, .gallery-grid {
+    /* Chuyển lưới dịch vụ và ảnh thành 2 cột */
+    .service-grid, 
+    .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
@@ -953,85 +956,121 @@ footer {
     }
 }
 
-/* 2. Mobile (Dưới 991px) */
-@media (max-width: 991px) {
-    /* Header Mobile */
+/* 2. Mobile (Dưới 768px) - QUAN TRỌNG NHẤT */
+@media (max-width: 768px) {
+    
+    /* --- XỬ LÝ MENU MOBILE (GIỐNG TRANG VECHUNGTOI) --- */
     .burger {
-        display: block;
+        display: block; /* Hiện nút 3 gạch */
+        z-index: 1001;
     }
-
+    
     .nav-links {
         position: fixed;
-        right: -100%;
-        top: 80px;
-        height: 90vh;
-        background: #fff;
-        flex-direction: column;
-        align-items: flex-start;
+        right: 0;
+        top: 80px; /* Bằng chiều cao header */
+        height: calc(100vh - 80px);
         width: 70%;
-        padding: 30px;
-        transition: 0.4s ease-in-out;
+        background-color: #fff;
+        flex-direction: column;
+        justify-content: flex-start; /* Xếp menu từ trên xuống */
+        padding-top: 30px;
+        transform: translateX(100%); /* Giấu sang phải */
+        transition: transform 0.5s ease-in;
         box-shadow: -5px 0 15px rgba(0,0,0,0.1);
         overflow-y: auto;
+        display: block; /* Chuyển sang dạng khối để xếp dọc */
     }
 
-    .nav-links.active {
-        right: 0;
+    /* Class này sẽ được JS thêm vào khi bấm nút Burger */
+    .nav-active {
+        transform: translateX(0%);
     }
 
+    /* Chỉnh các mục menu li */
     .nav-links li {
+        opacity: 1;
         width: 100%;
-        margin-bottom: 10px;
+        margin: 0;
         border-bottom: 1px solid #eee;
+        display: block;
+        height: auto;
+        padding: 0;
     }
 
     .nav-links li a {
         display: block;
-        padding: 15px 0;
+        padding: 15px 20px;
         font-size: 1rem;
+        color: #333;
     }
 
     .btn-contact {
-        width: 100%;
+        width: 90%;
         text-align: center;
-        margin-top: 15px;
+        margin: 20px auto;
+        display: block;
     }
 
-    /* Footer xếp dọc */
-    .footer-content {
-        flex-direction: column;
-        padding: 0 5%;
-        gap: 30px;
-    }
-
-    .footer-col {
+    /* --- XỬ LÝ DROPDOWN TRÊN MOBILE (ĐẨY XUỐNG) --- */
+    .dropdown-content {
+        position: relative; /* Không bay lơ lửng */
+        top: 0;
+        left: 0;
         width: 100%;
+        box-shadow: none;
+        border-top: none;
+        border-left: 3px solid var(--primary-color); /* Viền vàng bên trái cho đẹp */
+        background-color: #f9f9f9;
+        display: none;
+    }
+    
+    /* Khi chạm vào thì hiện ra */
+    .nav-links li:hover .dropdown-content {
+        display: block;
+        animation: none;
     }
 
-    /* Nội dung Body */
+    /* --- XỬ LÝ NỘI DUNG --- */
+    
+    /* Hero Banner */
     .hero-content h1 {
         font-size: 2.2rem;
     }
-
     .hero-buttons {
         flex-direction: column;
+        align-items: center;
         gap: 15px;
     }
     
+    /* About Section: Xếp dọc */
     .about-row {
         flex-direction: column;
+        text-align: center;
     }
-
     .about-img, .about-text {
         width: 100%;
     }
     
-    /* Chuyển hết lưới thành 1 cột */
-    .service-grid, .gallery-grid {
+    /* Grid 1 cột cho dễ nhìn */
+    .service-grid, 
+    .gallery-grid {
         grid-template-columns: 1fr;
     }
     
-    /* Modal full màn hình */
+    /* Footer: Xếp dọc và căn giữa */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+        padding: 0 20px; /* Thêm lề chút cho đỡ sát mép */
+    }
+    
+    .footer-col {
+        width: 100%;
+    }
+
+    /* Modal full màn hình cho dễ bấm */
     .modal-content {
         margin: 15% auto;
         width: 95%;
@@ -1041,12 +1080,17 @@ footer {
 
 /* 3. Mobile Nhỏ (Dưới 480px) */
 @media (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-
-    /* Ẩn bớt toast review để không che màn hình */
+    .logo { font-size: 1.4rem; }
+    .hero-content h1 { font-size: 1.8rem; }
+    .section-title h2 { font-size: 1.8rem; }
+    
+    /* Ẩn bớt toast review để không che màn hình điện thoại bé */
     #review-toast {
         display: none;
     }
 }
+
+/* Hiệu ứng xoay nút Burger thành dấu X */
+.toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
+.toggle .line2 { opacity: 0; }
+.toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); }
